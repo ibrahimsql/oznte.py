@@ -136,25 +136,31 @@ AP'nin SSID'si ve BSSID'si de dahil olmak üzere erişim noktası .cap dosyasıy
 
 class Target:
     """
-Bir Hedefe (diğer adıyla Erişim Noktası, diğer adıyla Yönlendirici) ilişkin verileri tutar    """
-
-  class AP:
+    Bir Hedefe (diğer adıyla Erişim Noktası, diğer adıyla Yönlendirici) ilişkin verileri tutar.
     """
-    Erişim Noktası (Access Point) bilgilerini tutar
-    """
-
-    def __init__(self, bssid, power, data, channel, encryption, ssid):
-        self.bssid = bssid  # Erişim noktasının BSSID'si
-        self.power = power  # Sinyal gücü
-        self.data = data  # Erişim noktasıyla ilgili diğer veriler
-        self.channel = channel  # Kanal numarası
-        self.encryption = encryption  # Şifreleme türü
-        self.ssid = ssid  # SSID (Ağ adı)
-        self.wps = False  # Varsayılan olarak WPS desteklenmiyor
-        self.key = ''  # Şifre (boş olarak başlar)
+    
+    class AP:
+        """
+        Erişim Noktası (Access Point) bilgilerini tutar.
+        """
+        
+        def __init__(self, bssid, power, data, channel, encryption, ssid):
+            self.bssid = bssid  # Erişim noktasının BSSID'si
+            self.power = power  # Sinyal gücü
+            self.data = data  # Erişim noktasıyla ilgili diğer veriler
+            self.channel = channel  # Kanal numarası
+            self.encryption = encryption  # Şifreleme türü
+            self.ssid = ssid  # SSID (Ağ adı)
+            self.wps = False  # Varsayılan olarak WPS desteklenmiyor
+            self.key = ''  # Şifre (boş olarak başlar)
 
 
 class Client:
+    """
+    Bir Client (Müşteri) sınıfı burada tanımlanabilir.
+    """
+    # Client sınıfının içeriğini burada tanımlayın.
+
     """
     Bir Müşteri (Erişim Noktası/Router'a bağlı cihaz) verilerini tutar
     """
@@ -4754,7 +4760,7 @@ class WPAElBilgisiKapure(Attack):
             el_bilgisi_var = self.el_bilgisi_var_mi_cowpatty(hedef, capdosyasi)
 
         # Pyrit ile el bilgisini kontrol et
-        if el_bilgisi_var and self.RUN_CONFIG.WPA_HANDSHAKE_PYRIT:
+        if el_bilgisi_var and self.RUN_CONFIG.WPA_HANDSHAKE_PYRIT: 
             denenen_yontemler = True
             el_bilgisi_var = self.el_bilgisi_var_mi_pyrit(hedef, capdosyasi)
 
