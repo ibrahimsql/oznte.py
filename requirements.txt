@@ -1,8 +1,8 @@
 # Gereksinimlerinizi buraya ekleyin
-numpy==1.24.0
-pandas==2.0.0
-requests==2.28.0
-flask==2.1.0
-sqlalchemy==2.0.0
-matplotlib==3.7.0
-pytest==7.3.0
+numpy==1.24.3
+pandas==2.0.3
+requests==2.31.0
+flask==2.3.2
+sqlalchemy==2.0.20
+matplotlib==3.7.2
+pytest==7.4.0
